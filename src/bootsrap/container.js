@@ -8,6 +8,8 @@ import Stop from "../modules/stops/models/stop.model.js";
 import StopRepository from "../modules/stops/repositories/stop.repository.js";
 import StopService from "../modules/stops/services/stop.service.js";
 import StopController from "../modules/stops/controllers/stop.controller.js";
+// bookings
+import registerBoarding from "../modules/bookings/boarding.container.js";
 
 // Coach
 import Coach from "../modules/coachs/models/coach.model.js";
@@ -21,9 +23,12 @@ const container = createContainer({
 });
 // Departures
 registerDepartures(container);
+// Boardinings
+registerBoarding(container);
 //lines
 registerLines(container);
 registerBookings(container);
+
 
 
 container.register({
